@@ -25,9 +25,11 @@ ESTRUCTURA
 
 App/
   __init__.py
+  routes/
+    auth.py
+    recetas.py
   auth.py
   models.py
-  routes.py
 data/
 static/
 templates/
