@@ -1,14 +1,18 @@
-#archivo para endpoints
+# Archivo para endpoints de autentificación
 
-from flask import request, jsonify
-import sqlite3, jwt, datetime
-from werkzeug.security import check_password_hash
 from app import app  # conecta con el  __init__
-from app.models import crear_usuario
+from flask import request, jsonify
+import sqlite3
 
+from werkzeug.security import check_password_hash
+from app.models import crear_usuario, get_db_connection
+from app.auth import generar_token
+
+# Registro
 @app.route('/register', methods=['POST'])
 def register():
     data = request.get_json()
+
     usuario = data.get("username")
     correo = data.get("email")
     password = data.get("password")
@@ -25,28 +29,30 @@ def register():
         return jsonify({"mensaje": "Error"}), 500
 
 
+# Inicio de Sesion
 @app.route('/login', methods=['POST'])
 def login():
-    datos = request.get_json()
-    correo = datos.get('email')
-    password = datos.get('password')
+    data = request.get_json() or {}
+
+    correo = data.get('email')
+    password = data.get('password')
 
     if not correo or not password:
         return jsonify({"mensaje": "Email y password son obligatorios"}), 400
 
-    conn = sqlite3.connect("recetas.db")
+    conn = get_db_connection()
     cursor = conn.cursor()
-    cursor.execute("SELECT id, password FROM users WHERE email = ?", (correo,))
+
+    cursor.execute(
+        "SELECT id, password FROM users WHERE email = ?",
+        (correo,)
+    )
     row = cursor.fetchone()
+
     conn.close()
 
-    if row and check_password_hash(row[1], password):
-        token = jwt.encode({
-            "user_id": row[0],
-            "exp": datetime.datetime.utcnow() + datetime.timedelta(minutes=30)
-        }, "secreto", algorithm="HS256")  # por ahora dejamos esto así
-
+    if row and check_password_hash(row["password"], password):
+        token = generar_token(row["id"])
         return jsonify({"token": token})
 
     return jsonify({"mensaje": "Credenciales inválidas"}), 401
-

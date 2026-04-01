@@ -3,10 +3,14 @@
 
 from flask import Flask
 from flask_cors import CORS
+from flask import render_template
 
 app = Flask(__name__)
 CORS(app)
 
-# Importar rutas (IMPORTANTE que esté al final)
 from app.routes import login
 from app.routes import receta
+
+@app.route('/')
+def home():
+    return render_template("index.html")

@@ -143,6 +143,7 @@ def login():
         return jsonify({"token": token})
 
     return jsonify({"mensaje": "Credenciales inválidas"}), 401
+# Esto ya esta agregado en auth.py 
 
 
 def get_db_connection():

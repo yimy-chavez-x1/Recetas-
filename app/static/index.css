@@ -1,0 +1,18 @@
+.box{
+    background-color: blanchedalmond;
+    padding: 10px;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.box label{
+    display: block;
+    margin-bottom: 10px;
+
+}
+
+.box input{
+    padding: 5px;
+    margin-top: 5px;
+
+}

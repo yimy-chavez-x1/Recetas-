@@ -1,5 +1,5 @@
 #archivo para datos y database
-import sqlite3, json, os, datetime
+import sqlite3
 from werkzeug.security import generate_password_hash
 
 DATABASE = 'recetas.db'
