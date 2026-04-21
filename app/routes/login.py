@@ -33,6 +33,7 @@ def register():
 @app.route('/login', methods=['POST'])
 def login():
     data = request.get_json() or {}
+    print("Datos recibidos en login:", data)
 
     correo = data.get('email')
     password = data.get('password')
@@ -51,8 +52,10 @@ def login():
 
     conn.close()
 
-    if row and check_password_hash(row["password"], password):
+    if row is None:
+        return jsonify({"mensaje": "Usuario no encontrado"}), 404
+
+    if check_password_hash(row["password"], password):
         token = generar_token(row["id"])
         return jsonify({"token": token})
-
     return jsonify({"mensaje": "Credenciales inválidas"}), 401

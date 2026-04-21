@@ -1,6 +1,6 @@
-#from == carpeta // import == variable
-
-from app import app #esto solo funciona con archivo __init__
+from app import app 
+from app.models import init_db
 
 if __name__ == "__main__":
+    init_db()
     app.run(debug=True)         

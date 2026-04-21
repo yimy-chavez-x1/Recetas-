@@ -66,10 +66,13 @@ def token_required(f):
                 token = token.split(" ")[1]
             payload = jwt.decode(token, CLAVE, algorithms=["HS256"])
             user_id = payload['user_id']
+
         except jwt.ExpiredSignatureError:
             return jsonify({"mensaje": "Token expirado"}), 401
+
         except jwt.InvalidTokenError:
             return jsonify({"mensaje": "Token inválido"}), 401
+        
         return f(user_id=user_id, *args, **kwargs)
     decorator.__name__ = f.__name__
     return decorator

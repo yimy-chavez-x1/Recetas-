@@ -43,7 +43,6 @@ def init_db():
 def crear_usuario(username, email, password):
     conn = get_db_connection()
     cursor = conn.cursor()
-
     hash_pw = generate_password_hash(password)
 
     cursor.execute(

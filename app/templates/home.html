@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <script src="{{ url_for('static', filename='index.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='home.js') }}" defer></script>
+
+    <title>Recetas</title>
+</head>
+<body>
+    <h1>Home</h1>
+    <form id="home_form">
+        <button type="button" id="Crear">Crear Receta</button>
+        <button type="button" id="Ver">Ver mis Recetas</button>
+        <button type="button" id="Editar">Editar Receta</button>
+        <button type="button" id="Eliminar">Eliminar Receta</button>
+    </form>
+</body>
+</html>
