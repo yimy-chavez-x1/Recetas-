@@ -3,9 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='eliminar.css') }}">
+    <script src="{{ url_for('static', filename='eliminar.js') }}" defer></script>
+
+    <title>Eliminar</title>
 </head>
 <body>
-    
+    <h1>Eliminar Receta</h1>
+
+  <form id="formEliminarReceta">
+    <input type="number" id="id" placeholder="ID de la receta" required>
+    <button type="submit">Eliminar</button>
+    <button type="button" id="btnHome">Volver al Home</button>
+  </form>
+
 </body>
 </html>

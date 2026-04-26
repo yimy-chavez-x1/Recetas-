@@ -3,9 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='crear.css') }}">
+    <script src="{{ url_for('static', filename='crear.js') }}" defer></script>
+
+    <title>Crear</title>
 </head>
 <body>
+  <h1>Crear Receta</h1>
+
+  <form id="formCrearReceta">
+    <input type="text" id="nombre" placeholder="Nombre de la receta" required>
+    <textarea id="ingredientes" placeholder="Ingredientes" required></textarea>
+    <textarea id="preparacion" placeholder="Preparación" required></textarea>
+    <button type="submit">Guardar</button>
+    <button type="button" id="btnHome">Volver al Home</button>
+  </form>
+  
     
 </body>
 </html>

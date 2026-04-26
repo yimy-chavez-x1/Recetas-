@@ -22,15 +22,21 @@ def get_items(user_id):
         cursor.execute("SELECT * FROM receta WHERE user_id=? AND nombre=?", (user_id, nombre))
     elif ingredientes: 
         cursor.execute("SELECT * FROM receta WHERE user_id=? AND ingredientes LIKE ?", (user_id, f"%{ingredientes}%"))
-    elif categoria:  
-        cursor.execute("SELECT * FROM receta WHERE user_id=? AND categoria LIKE ?", (user_id, f"%{categoria}%"))
     else:  
         cursor.execute("SELECT * FROM receta WHERE user_id=?", (user_id,))
     
     rows = cursor.fetchall()
     conn.close()
 
-    receta = [{"id": r[0], "nombre": r[2]} for r in rows]
+    receta = [
+        {
+        "id": r[0],
+        "nombre": r[2],
+        "ingredientes": r[3],
+        "preparacion": r[4],
+        }     
+        for r in rows
+    ]
 
     return jsonify({"receta": receta}), 200
 
@@ -41,6 +47,8 @@ def get_items(user_id):
 def create_item(user_id):
     data = request.get_json()
     nombre = data.get("nombre")
+    ingredientes = data.get("ingredientes")
+    preparacion = data.get("preparacion")
 
     if not nombre:
         return jsonify({"message": "nombre obligatorio"}), 400
@@ -48,7 +56,7 @@ def create_item(user_id):
     conn = sqlite3.connect("recetas.db")
     cursor = conn.cursor()
 
-    cursor.execute("INSERT INTO receta (user_id, nombre) VALUES (?, ?)", (user_id, nombre))
+    cursor.execute("INSERT INTO receta (user_id, nombre, ingredientes, preparacion) VALUES (?, ?, ?, ?)", (user_id, nombre, ingredientes, preparacion))
     conn.commit()
 
     new_id = cursor.lastrowid

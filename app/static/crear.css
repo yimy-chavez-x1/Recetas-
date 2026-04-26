@@ -1,24 +1,26 @@
 body {
   font-family: Arial, sans-serif;
-  background: #fafafa;
-  margin: 0;
-  padding: 40px;
+  padding: 20px;
 }
 
-h1#titulo_home {
+h1 {
   text-align: center;
-  color: #333;
-  margin-bottom: 30px;
 }
 
-#home_form {
+form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 15px;
+  gap: 10px;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
-#home_form button {
+input, textarea, button {
+  padding: 8px;
+  font-size: 1rem;
+}
+
+button {
   width: 200px;
   padding: 12px;
   font-size: 16px;
@@ -27,8 +29,4 @@ h1#titulo_home {
   background: #4CAF50;
   color: white;
   cursor: pointer;
-}
-
-#home_form button:hover {
-  background: #45a049;
 }

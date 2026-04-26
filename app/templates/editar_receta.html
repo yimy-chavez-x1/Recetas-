@@ -3,9 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='editar.css') }}">
+    <script src="{{ url_for('static', filename='editar.js') }}" defer></script>
+    <title>Editar</title>
 </head>
 <body>
+    <h1>Editar Receta</h1>
+
+  <form id="formEditarReceta">
+    <input type="number" id="id" placeholder="ID de la receta" required>
+    <input type="text" id="nombre" placeholder="Nuevo nombre">
+    <textarea id="ingredientes" placeholder="Nuevos ingredientes"></textarea>
+    <textarea id="preparacion" placeholder="Nueva preparación"></textarea>
+    
+    <button type="submit">Actualizar</button>
+    <button type="button"  id="btnHome">Volver al Home</button>
+
+  </form>
+
     
 </body>
 </html>

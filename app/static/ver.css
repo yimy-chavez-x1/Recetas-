@@ -1,0 +1,35 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #fafafa;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+ul#listaRecetas {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 0;
+  list-style: none;
+}
+
+#listaRecetas li {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 5px;
+}
+button{
+    width: 200px;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background: #4CAF50;
+  color: white;
+  cursor: pointer;
+}

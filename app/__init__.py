@@ -23,13 +23,27 @@ def crear_usuario_si_no_existe():
 crear_usuario_si_no_existe()
 
 
-@app.route('/')
+@app.route('/') #login
 def home():
     return render_template("index.html")
-
-@app.route('/home')
+ 
+@app.route('/home') #home
 def inicio():
     return render_template("home.html")
 
+#funciones del CRUD
+@app.route('/crear')
+def crear():
+    return render_template("crear_receta.html")
 
+@app.route('/editar')
+def editar():
+    return render_template("editar_receta.html")
 
+@app.route('/ver')
+def ver():
+    return render_template("ver_receta.html")
+
+@app.route('/eliminar')
+def eliminar():
+    return render_template("eliminar_receta.html")
