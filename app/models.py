@@ -13,7 +13,8 @@ def init_db():
     conn = get_db_connection()
     cursor = conn.cursor()
 
-    cursor.execute("""
+    #login
+    cursor.execute(""" 
     CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         username TEXT NOT NULL,
@@ -22,16 +23,14 @@ def init_db():
     )
     """)
 
+    #recetas
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS receta (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         user_id INTEGER NOT NULL,
         nombre TEXT NOT NULL,
         ingredientes TEXT,
-        duracion TEXT,
         preparacion TEXT,
-        anotacion TEXT,
-        categoria TEXT,
         favorito TEXT DEFAULT 'no' CHECK(favorito IN ('si','no')),
         FOREIGN KEY(user_id) REFERENCES users(id)
     )
