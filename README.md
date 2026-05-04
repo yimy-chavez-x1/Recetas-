@@ -8,9 +8,9 @@ Incluye backend modularizado y frontend en HTML, CSS y JavaScript.
 - CRUD completo de recetas
 - Autenticación con JWT
 - Base de datos SQLite
-- Arquitectura modular (en progreso)
-- Historial de cambios (en desarrollo)
-- Integración futura con frontend
+- Arquitectura modular 
+- Historial de cambios 
+- Frontend HTML, JS, CSS
 
 ### TECNOLOGIAS
 
