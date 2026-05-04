@@ -19,7 +19,7 @@ Frontend: HTML, CSS y JS
 Otros: Cors, Fetch API
 
 ## Estructura del proyecto
-
+```
 RECETIFY/
 ├── app/
 │   ├── __init__.py
@@ -54,7 +54,7 @@ RECETIFY/
 ├── requirements.txt
 ├── run.py
 └── .gitignore
-
+```
 
 
 ###  Metodo de instalación
