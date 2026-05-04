@@ -20,6 +20,8 @@ Otros: Cors, Fetch API
 
 ## Estructura del proyecto
 ```
+## 📂 Estructura del proyecto
+
 RECETIFY/
 ├── app/
 │   ├── __init__.py
@@ -51,8 +53,17 @@ RECETIFY/
 │   ├── ver_receta.html
 │   ├── home.html
 │   └── index.html
+├── assets/
+│   ├── png_crear.png
+│   ├── png_editar.png
+│   ├── png_eliminar.png
+│   ├── png_home.png
+│   ├── png_register.png
+│   └── png_ver.png
+├── recetas.db
 ├── requirements.txt
 ├── run.py
+├── README.md
 └── .gitignore
 ```
 
