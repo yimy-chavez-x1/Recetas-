@@ -30,3 +30,6 @@ button {
   color: white;
   cursor: pointer;
 }
+button:hover {
+  background: #45a049;
+}
