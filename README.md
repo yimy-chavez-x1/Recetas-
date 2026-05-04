@@ -18,7 +18,7 @@ Backend: Pyton con flask,SQLite y JWT
 Frontend: HTML, CSS y JS
 Otros: Cors, Fetch API
 
-###  ESTRUCTURA 
+## Estructura del proyecto
 
 RECETIFY/
 ├── app/
@@ -54,6 +54,7 @@ RECETIFY/
 ├── requirements.txt
 ├── run.py
 └── .gitignore
+
 
 
 ###  Metodo de instalación
