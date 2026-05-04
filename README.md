@@ -54,6 +54,39 @@ requeriments.txt
 run.py
 .gitignore
 
+Metodo de instalación
+
+Clonar Repositorio
+```bash
+git clone https://github.com/yimy-chavez-x1/RECETIFY.git
+cd RECETIFY
+```
+Crear un entorno virtual
+```bash
+  python -m venv .venv
+```
+
+Activar entorno virtual
+  Linux/Mac:  
+  ```bash
+    source .venv/bin/activate
+  ```
+
+  windows:
+  ```bash
+    .venv\Scripts\activate
+  ```
+
+Instalar dependencias
+  ```bash
+  pip install -r requirements.txt
+  ```
+
+Levantar el server
+  ```bash
+  flask run
+  ```
+
 Capturas de pantalla
 
 ### Registro de usuario
