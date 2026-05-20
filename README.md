@@ -3,6 +3,11 @@
 API REST desarrollada con Flask que permite gestionar recetas mediante operaciones CRUD, con autenticación basada en JWT.
 Incluye backend modularizado y frontend en HTML, CSS y JavaScript.
 
+### Deploy web
+```
+en render (https://recetify-urcf.onrender.com/)
+```
+
 ### CARACTERISTICAS
 ```
 - CRUD completo de recetas
@@ -65,43 +70,6 @@ RECETIFY/
 ├── README.md
 └── .gitignore
 ```
-### Deploy web
-```
-en render (https://recetify-urcf.onrender.com/)
-```
-###  Metodo de instalación
-
-Clonar Repositorio
-```bash
-git clone https://github.com/yimy-chavez-x1/Recetify
-cd Recetify
-```
-Crear un entorno virtual
-```bash
-  python -m venv .venv
-```
-
-Activar entorno virtual
-  Linux/Mac:  
-  ```bash
-    source .venv/bin/activate
-  ```
-  windows:
-  ```bash
-    .venv\Scripts\activate
-  ```
-
-Instalar dependencias
-  ```bash
-  pip install -r requirements.txt
-  ```
-
-Levantar el server
-  ```bash
-  python run.py
-  ```
-La aplicación estará disponible en http://127.0.0.1:5000
-
 
 ### Capturas de pantalla
 
